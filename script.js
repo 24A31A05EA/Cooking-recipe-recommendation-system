@@ -110,3 +110,4 @@ function viewDetails(recipeName) {
     localStorage.setItem("selectedRecipe", recipeName);
     window.location.href = "details.html";
 }
+
