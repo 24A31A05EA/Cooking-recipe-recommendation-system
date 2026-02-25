@@ -82,5 +82,5 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function goBack() {
-    window.location.href = "recipes.html?from=details";
+    window.location.replace("recipes.html");
 }

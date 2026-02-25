@@ -62,4 +62,5 @@ df["image"] = df.apply(lambda row: find_image(row["name"], row.get("image_url"))
 # Save JSON
 df.to_json("recipes.json", orient="records", indent=4)
 
+
 print("✅ JSON Updated Successfully!")

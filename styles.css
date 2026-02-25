@@ -1,192 +1,292 @@
+/* ================= GENERAL ================= */
+
 body {
-    font-family: Arial, sans-serif;
-    background: #fff8f0;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
+    background: #0d0d0d;
+    color: #ffffff;
 }
 
+/* ================= HEADER ================= */
+
 header {
-    background-color: #ff704d;
-    color: white;
+    background: rgba(20, 20, 20, 0.85);
+    backdrop-filter: blur(10px);
     text-align: center;
-    padding: 20px 0;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.2);
+    padding: 25px 0;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
 }
+
+/* ================= FILTER SECTION ================= */
 
 .filters {
     display: flex;
     justify-content: center;
-    gap: 10px;
-    margin: 20px 0;
+    gap: 12px;
+    margin: 30px 0;
 }
 
-.filters input, .filters select, .filters button {
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 5px;
-    border: 1px solid #ff704d;
+.filters input,
+.filters select {
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.08);
+    color: white;
+    font-size: 14px;
+}
+
+.filters select option {
+    background: #1a1a1a;
+    color: white;
+}
+
+.filters input::placeholder {
+    color: #aaa;
 }
 
 .filters button {
-    background-color: #ff704d;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.15);
+    background: rgba(255,255,255,0.05);
     color: white;
     cursor: pointer;
-    transition: transform 0.2s;
+    transition: 0.3s ease;
 }
 
 .filters button:hover {
-    transform: scale(1.05);
+    background: rgba(255,255,255,0.15);
+    transform: translateY(-2px);
 }
+
+/* ================= RECIPE GRID ================= */
 
 .recipe-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 20px;
-    padding: 0 20px 40px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+    padding: 0 40px 60px 40px;
 }
 
+/* ================= RECIPE CARDS ================= */
+
 .recipe-card {
-    background: white;
-    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 18px;
     overflow: hidden;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s, box-shadow 0.3s;
+    transition: 0.4s ease;
+    border: 1px solid rgba(255,255,255,0.08);
 }
 
 .recipe-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
+    transform: translateY(-12px) scale(1.04);
+    box-shadow: 
+        0 0 15px rgba(255, 255, 255, 0.25),
+        0 0 35px rgba(255, 255, 255, 0.15),
+        0 20px 40px rgba(0,0,0,0.6);
+    border: 1px solid rgba(255,255,255,0.3);
 }
 
 .recipe-card img {
     width: 100%;
-    height: 200px;  /* or auto if you want original proportions */
+    height: 220px;
     object-fit: cover;
-    display: block;
+    transition: 0.4s ease;
 }
+
+.recipe-card:hover img {
+    transform: scale(1.05);
+}
+
 .recipe-card .content {
-    padding: 15px;
+    padding: 18px;
 }
 
 .recipe-card h3 {
     margin: 0 0 10px 0;
+    font-size: 18px;
 }
 
 .recipe-card p {
-    margin: 5px 0;
+    margin: 6px 0;
     font-size: 14px;
-}
-.hidden {
-    display: none;
+    color: #ccc;
 }
 
+.recipe-card button {
+    margin-top: 12px;
+    padding: 8px 16px;
+    border-radius: 8px;
+    border: none;
+    background: white;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.recipe-card button:hover {
+    background: #ddd;
+    transform: scale(1.05);
+}
+
+/* ================= LANDING PAGE ================= */
+
 .landing {
+    position: relative;
     height: 100vh;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(to right, #ff704d, #ffb347);
-    color: white;
     text-align: center;
+    overflow: hidden;
+    background: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1920&q=80") center center no-repeat;
+    background-size: cover;
+    animation: bgZoom 25s infinite alternate ease-in-out;
+}
+
+.landing::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.4));
+}
+
+.overlay {
+    position: relative;
+    background: rgba(0,0,0,0.55);
+    padding: 50px 70px;
+    border-radius: 18px;
+    backdrop-filter: blur(8px);
+    animation: fadeUp 1.2s ease forwards;
 }
 
 .landing h1 {
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 44px;
+    margin-bottom: 15px;
+}
+
+.landing p {
+    font-size: 18px;
+    margin-bottom: 25px;
+    color: #ddd;
 }
 
 #startBtn {
-    padding: 15px 30px;
-    font-size: 18px;
+    padding: 14px 30px;
+    font-size: 16px;
+    border-radius: 10px;
     border: none;
-    border-radius: 8px;
     background: white;
-    color: #ff704d;
+    color: black;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 #startBtn:hover {
-    transform: scale(1.1);
+    transform: scale(1.08);
+    box-shadow: 0 10px 30px rgba(255,255,255,0.4);
 }
 
+/* ================= ANIMATIONS ================= */
 
-/* updated part */
-/* ===== BOX STYLE DETAIL PAGE ===== */
+@keyframes bgZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================= DETAIL PAGE ================= */
 
 .detail-page {
-    max-width: 1100px;
-    margin: 40px auto;
-    padding: 20px;
+    padding: 40px;
 }
 
 .detail-title-box {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    text-align: center;
     margin-bottom: 20px;
 }
 
-.detail-title-box h1 {
-    color: #ff704d;
-    margin: 0;
-}
-
 .time-badge {
-    background: #ff704d;
-    color: white;
-    padding: 8px 15px;
+    display: inline-block;
+    padding: 6px 14px;
     border-radius: 20px;
-    font-weight: bold;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    font-size: 14px;
 }
 
-.detail-image-box img {
-    width: 100%;
-    height: auto;  /* preserves aspect ratio */
-    max-width: 800px;  /* don't stretch beyond image size */
+.detail-image-box {
+    text-align: center;
+    margin: 30px 0;
+}
+
+.detail-page .detail-image-box img {
+    width: 220px;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.detail-image-box img:hover {
+    box-shadow: 0 0 40px rgba(255,255,255,0.25);
+    transform: scale(1.03);
 }
 
 .detail-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 25px;
+    gap: 40px;
 }
 
 .detail-box {
-    background: white;
+    background: #1a1a1a;
     padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    transition: 0.3s;
+    border-radius: 14px;
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.3s ease;
 }
-
 .detail-box:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    transform: translateY(-6px);
+    box-shadow:
+        0 0 15px rgba(255,255,255,0.25),
+        0 0 35px rgba(255,255,255,0.15),
+        0 15px 30px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255,255,255,0.25);
 }
 
 .detail-box h2 {
-    margin-top: 0;
-    color: #ff704d;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
-.detail-box p {
+.detail-box p,
+.detail-box li {
+    color: #ccc;
     line-height: 1.6;
-    color: #333;
 }
 
 .detail-box ul {
-    padding-left: 18px;
-}
-
-.detail-box li {
-    margin-bottom: 8px;
+    padding-left: 20px;
 }
 
 .full-width {
-    grid-column: span 2;
+    grid-column: 1 / -1;
 }
 
 .detail-footer {
@@ -195,27 +295,28 @@ header {
 }
 
 .detail-footer button {
-    padding: 12px 25px;
-    background: #ff704d;
-    border: none;
-    color: white;
-    font-size: 16px;
+    padding: 10px 20px;
     border-radius: 8px;
+    border: none;
+    background: white;
+    color: black;
     cursor: pointer;
-    transition: 0.3s;
+    transition: 0.3s ease;
 }
 
 .detail-footer button:hover {
-    background: #e65c33;
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(255,255,255,0.3);
 }
 
-/* Responsive */
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 900px) {
     .detail-grid {
         grid-template-columns: 1fr;
     }
 
-    .full-width {
-        grid-column: span 1;
+    .detail-image-box img {
+        width: 100%;
     }
 }
