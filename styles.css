@@ -320,3 +320,6 @@ header {
         width: 100%;
     }
 }
+#mainPage {
+    display: none;
+}
