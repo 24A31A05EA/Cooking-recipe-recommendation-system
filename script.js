@@ -6,6 +6,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const landingPage = document.getElementById("landingPage");
     const mainPage = document.getElementById("mainPage");
     const submitBtn = document.getElementById("submitBtn");
+    
+    window.onload = function() {
+    landingPage.style.display = "none";
+    mainPage.style.display = "block";
+};
 
     // ✅ Start Button
     if (startBtn && landingPage && mainPage) {
