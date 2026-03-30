@@ -14,8 +14,8 @@ A web-based application that helps users discover and search for recipes based o
 ## Technologies Used
 
 - **Frontend:**
-  - HTML5
-  - CSS3
+  - HTML5 
+  - CSS3 
   - JavaScript (Vanilla)
 
 - **Backend/Data Processing:**
@@ -158,7 +158,7 @@ The `cleandataset2.py` script:
 **Recipes not appearing:**
 - Verify `recipes.json` is in the root directory
 - Check browser console for JavaScript errors (F12)
-- Ensure JSON file format is valid
+- Ensure JSON file format is valid 
 
 **Search not working:**
 - Clear browser cache
