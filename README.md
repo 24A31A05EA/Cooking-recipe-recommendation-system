@@ -43,20 +43,20 @@ Cooking-recipe-recommendation-system/
    cd Cooking-recipe-recommendation-system
 2. Install Python dependencies:
 
-pip install pandas
+   pip install pandas
 
 3. Run:
 
-python cleandataset2.py
+   python cleandataset2.py
 
-Open index.html directly in a browser, or
+   Open index.html directly in a browser, or
 
 4. Run a local server:
 
 
-bash
-python -m http.server 8000
-Navigate to http://localhost:8000
+   bash
+   python -m http.server 8000
+   Navigate to http://localhost:8000
 
 ## 8. Usage
 Start from the landing page (index.html)
