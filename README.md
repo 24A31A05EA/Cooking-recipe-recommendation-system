@@ -1,189 +1,122 @@
-# Cooking Recipe Recommendation System
+Cooking Recipe Recommendation System
+1. Project Title
+Cooking Recipe Recommendation System
 
-A web-based application that helps users discover and search for recipes based on their preferences. The system uses ingredient and cuisine data to recommend delicious recipes with filtering capabilities.
+2. Project Description
+A web-based application that helps users discover and search for recipes based on their preferences. It uses ingredient and cuisine data to recommend delicious recipes with filtering capabilities.
 
-## Features
+3. Problem Statement
+Many people struggle to decide what to cook with the ingredients they have at home. This project solves that problem by providing recipe recommendations based on available ingredients, meal type, and preparation time.
 
-- 🔍 **Search by Ingredients** - Find recipes by entering ingredients you have
-- 🍽️ **Filter by Meal Type** - Browse recipes by meal category (Breakfast, Lunch, Dinner, Snack)
-- ⏱️ **Filter by Prep Time** - Find recipes based on cooking time (15, 30, 60 minutes)
-- 🖼️ **Recipe Cards** - View recipe details with images and cooking information
-- 📱 **Responsive Design** - Works seamlessly on desktop and mobile devices
-- ⭐ **Quick Recommendations** - Get instant recipe suggestions
+4. Features of the Project
+🔍 Search recipes by ingredients
 
-## Technologies Used
+🍽️ Filter recipes by meal type (Breakfast, Lunch, Dinner, Snack)
 
-- **Frontend:**
-  - HTML5 
-  - CSS3 
-  - JavaScript (Vanilla)
+⏱️ Filter recipes by preparation time (15, 30, 60 minutes)
 
-- **Backend/Data Processing:**
-  - Python
-  - Pandas (data manipulation)
-  - Regular Expressions (text cleaning)
+🖼️ Recipe cards with images and cooking details
 
-- **Data Format:**
-  - CSV (Cuisines data)
-  - JSON (Recipes data)
+📱 Responsive design for desktop and mobile
 
-## Project Structure
+⭐ Quick recipe recommendations
 
-```
+5. Technology Used
+Frontend: HTML5, CSS3, JavaScript (Vanilla)
+
+Backend/Data Processing: Python, Pandas, Regular Expressions
+
+Data Format: CSV (Cuisine data), JSON (Recipes data)
+
+6. Project Structure
+Code
 Cooking-recipe-recommendation-system/
 ├── index.html                 # Main landing/search page
 ├── details.html               # Recipe details page
 ├── styles.css                 # CSS styling
 ├── script.js                  # Main JavaScript logic
 ├── details.js                 # Details page JavaScript
-├── cleandataset2.py          # Python data cleaning script
-├── recipes.json              # Recipes database
-├── cuisines.csv              # Cuisines data
-├── image_for_cuisines/       # Recipe images folder
+├── cleandataset2.py           # Python data cleaning script
+├── recipes.json               # Recipes database
+├── cuisines.csv               # Cuisines data
+├── image_for_cuisines/        # Recipe images folder
 │   └── data/
-└── README.md                 # Project documentation
-```
+└── README.md                  # Project documentation
+7. Installation/Setup
+Clone or download the project:
 
-## Setup Instructions
+bash
+git clone <repository-url>
+cd Cooking-recipe-recommendation-system
+Install Python dependencies:
 
-### Prerequisites
-- Python 3.x (for data processing)
-- A modern web browser
+bash
+pip install pandas
+Run data cleaning script (optional):
 
-### Installation
+bash
+python cleandataset2.py
+Open the application:
 
-1. **Clone or download the project:**
-   ```bash
-   git clone <repository-url>
-   cd Cooking-recipe-recommendation-system
-   ```
+Open index.html directly in a browser, or
 
-2. **Set up Python environment (if needed):**
-   ```bash
-   pip install pandas
-   ```
+Run a local server:
 
-3. **Run data cleaning script (optional):**
-   ```bash
-   python cleandataset2.py
-   ```
+bash
+python -m http.server 8000
+Navigate to http://localhost:8000
 
-4. **Open the application:**
-   - Open `index.html` in your web browser, or
-   - Use a local server:
-     ```bash
-     # Python 3.x
-     python -m http.server 8000
-     ```
-   - Then navigate to `http://localhost:8000`
+8. Usage
+Start from the landing page (index.html)
 
-## Usage
+Search recipes by entering ingredients
 
-1. **Landing Page:**
-   - Click "Start Cooking" button to begin
+Apply filters for meal type and cooking time
 
-2. **Search & Filter:**
-   - Enter an ingredient in the search box
-   - Select meal type from dropdown
-   - Select cooking time preference
-   - Click "Submit" to search
+Browse recipe cards and click for full details
 
-3. **View Recipes:**
-   - Browse recipe cards displayed
-   - Click on a recipe to see full details
-   - View ingredients, cooking time, and recipe image
+9. Sample Output
+A recipe card showing:
 
-## Data Files
+Recipe name
 
-### recipes.json
-Contains recipe information including:
-- Recipe name
-- Ingredients
-- Cuisine type
-- Meal type
-- Prep time
-- Image reference
+Ingredients list
 
-### cuisines.csv
-Contains cuisine and ingredient data used for categorization and filtering
+Cuisine type
 
-### image_for_cuisines/data/
-Stores recipe images referenced in the recipes data
+Meal type
 
-## Python Data Cleaning
+Prep time
 
-The `cleandataset2.py` script:
-- Loads cuisine data from CSV
-- Normalizes and cleans text data
-- Matches recipes with their corresponding images
-- Removes special characters and standardizes formatting
+Recipe image
 
-## Key Functions
+Example:
+Recipe: Spaghetti Aglio e Olio
+Ingredients: Spaghetti, Garlic, Olive Oil, Chili Flakes
+Cuisine: Italian
+Meal Type: Dinner
+Prep Time: 20 minutes
 
-### JavaScript (script.js)
-- `filterRecipes()` - Filters recipes based on search criteria
-- `displayRecipes()` - Renders recipe cards to the page
-- `searchByIngredient()` - Searches recipes by ingredient name
+10. Future Improvements
+User authentication and saved favorites
 
-### Python (cleandataset2.py)
-- `normalize()` - Converts text to lowercase and removes special characters
-- `get_words()` - Splits text into individual words
-- `find_image()` - Matches recipes to their image files
+Nutritional information display
 
-## Browser Compatibility
+Recipe ratings and reviews
 
-- Chrome (recommended)
-- Firefox
-- Safari
-- Edge
-- Mobile browsers (iOS Safari, Chrome Mobile)
+Dietary restriction filters
 
-## Future Enhancements
+Recipe difficulty levels
 
-- User authentication and saved favorites
-- Nutritional information display
-- Recipe ratings and reviews
-- Dietary restriction filters
-- Recipe difficulty levels
-- Video cooking tutorials
-- Shopping list generation
-- Backend API integration
+Video cooking tutorials
 
-## Troubleshooting
+Shopping list generation
 
-**Images not loading:**
-- Ensure `image_for_cuisines/data/` folder contains recipe images
-- Run `cleandataset2.py` to rebuild image mappings
+Backend API integration
 
-**Recipes not appearing:**
-- Verify `recipes.json` is in the root directory
-- Check browser console for JavaScript errors (F12)
-- Ensure JSON file format is valid 
+11. Author
+Name: Kavya
 
-**Search not working:**
-- Clear browser cache
-- Try different ingredient names
-- Check console for any error messages
+Role: Developer
 
-## Contributing
-
-Feel free to contribute by:
-- Adding more recipes
-- Improving the UI/UX
-- Optimizing search algorithms
-- Adding new features
-
-## License
-
-This project is open source and available for personal and educational use.
-
-## Support
-
-For issues or questions:
-- Check the troubleshooting section
-- Review the browser console for error messages
-- Verify all data files are present and properly formatted
-
----
-
-**Happy Cooking!** 👨‍🍳
+LinkedIn URL: https://www.linkedin.com/in/kavya-itabattula-31220332b
