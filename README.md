@@ -42,14 +42,17 @@ Cooking-recipe-recommendation-system/
    git clone <repository-url>
    cd Cooking-recipe-recommendation-system
 2. Install Python dependencies:
+
 pip install pandas
 
-3. RUn
+3. Run:
+
 python cleandataset2.py
 
 Open index.html directly in a browser, or
 
 4. Run a local server:
+
 
 bash
 python -m http.server 8000
